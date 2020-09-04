@@ -73,6 +73,7 @@ int main(){
         }
         // Adding the word in missed if they are and input_number is the no of times this loop is runned
         if(is_word_missed){missed_words.push_back(input_letter);}
+        else{input_number--;}
 
         // Now printing Misses
         std::cout<<"Misses: ";
