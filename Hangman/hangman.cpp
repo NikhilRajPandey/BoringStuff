@@ -15,6 +15,11 @@ void conv_to_lower(char *param_string,int size_){
     for (int i = 0; i < size_; i++){param_string[i] = tolower(param_string[i]);}
 }
 
+void fill(char *param_string,int size_,char word){
+    for (int i = 0; i < size_; i++){param_string[i] = word;}
+    param_string[size_] = '\0';
+}
+
 int main(){
     // setting a random seed for generating a random word
     srand (time(NULL));
@@ -37,6 +42,8 @@ int main(){
     conv_to_lower(word_,word_size);
 
     char matched_words[word_size]; // Words that are matched by input
+    fill(matched_words,word_size,'_');
+
     std::string missed_words;
     char input_letter;
     bool is_word_missed = true;
@@ -46,17 +53,8 @@ int main(){
     std::cout<<"Write "<<exit_char<<"For Exit\n"<<std::endl;
 
     while (input_number < word_size){
-        std::cout<<"Word: ";
         // Printing this type of structure ___a__n__
-        for (int i = 0; i < word_size; i++){
-            if(matched_words[i] == word_[i]){
-                std::cout<<word_[i];
-            }
-            else{
-                std::cout<<"_";
-            }
-        }
-        std::cout<<"\n";
+        std::cout<<"Word: "<<matched_words<<"\n";
 
         // Taking input from the user
         std::cout<<"Guess: ";
