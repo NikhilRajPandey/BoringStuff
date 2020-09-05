@@ -77,15 +77,15 @@ int main(){
 
         // Now printing Misses
         std::cout<<"Misses: ";
-        // std::cout<<missed_words.size()<<std::endl;
-        // std::cout<<missed_words<<std::endl;
         for (int i = 0; i < missed_words.size(); i++){std::cout<<missed_words[i]<<" ";}
         
+        if(strcmp(matched_words,word_) == 0){break;} // Means Player is won
+
         std::cout<<"\n\n";
         input_number++;
         is_word_missed = true;
     }
-    std::cout<<"The word is "<<word_<<std::endl;
+    std::cout<<"\nThe word is "<<word_<<std::endl;
     if(strcmp(matched_words,word_) == 0){
         std::cout<<"\nYou Win"<<std::endl;
     }
