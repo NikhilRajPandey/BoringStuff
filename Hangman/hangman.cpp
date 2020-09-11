@@ -69,7 +69,7 @@ int main(){
         
         // checking the is Word Entered is in the word or not and if yes then replacing it
         for (int i = 0; i < word_size; i++){
-            if(word_[i] == input_letter){matched_words[i] = input_letter;is_word_missed=false;}
+            if(word_[i] == input_letter and matched_words[i] == '_'){matched_words[i] = input_letter;is_word_missed=false;}
         }
         // Adding the word in missed if they are and input_number is the no of times this loop is runned
         if(is_word_missed){missed_words.push_back(input_letter);}
