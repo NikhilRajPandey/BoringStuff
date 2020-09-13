@@ -8,7 +8,7 @@
 bool is_vowel_in_it(std::string param_word){
     // Give true when it founds no vowel else false
 
-    if(param_word == ""){return false;}
+    if(param_word.length() <= 2){return false;}
 
     char vowels[6] = "aeiou";
     for (int i = 0; i < param_word.length(); i++){
@@ -31,10 +31,19 @@ std::vector<std::string> word_without_vowel(){
         if(is_vowel_in_it(current_word)){result.push_back(current_word);}
         file_>>current_word;
     }
-
     return result;
 
 }
 int main(){
-    std::cout<<word_without_vowel()<<std::endl;
+    std::vector<std::string> all_words = word_without_vowel();
+    // std::vector<std::string> all_words = *(word_without_vowel());
+    // std::cout<<*(all_words.at(0))<<std::endl;
+    std::string biggest_word = all_words.at(0);
+    for(int i = 0;i<all_words.size();i++){
+        std::cout<<all_words.at(i)<<std::endl;
+
+        // Finding the maximum letter word from the result
+        if(all_words.at(i).size() > biggest_word.size()){biggest_word = all_words.at(i);}
+    }
+    std::cout<<"The Biggest Word Founded is "<<biggest_word<<std::endl;
 }
